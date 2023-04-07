@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558944241454",
+    "project_id": "fire-base-practice-33330",
+    "storage_bucket": "fire-base-practice-33330.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558944241454:android:07a48bfa7d6fd42245dcbf",
+        "android_client_info": {
+          "package_name": "com.sehrish.fire_base_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558944241454-bk3recqshi2bia9lp7di933er1v4il2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW1WMGjPgvf_Hbu2zFST0t_-WkPqJvea8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558944241454-bk3recqshi2bia9lp7di933er1v4il2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
