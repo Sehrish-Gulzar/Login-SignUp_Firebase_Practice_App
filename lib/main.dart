@@ -1,26 +1,27 @@
-import 'package:firebase_core/firebase_core.dart';
+import 'package:fire_base_demo/screens/details/components/cart_management.dart';
+import 'package:fire_base_demo/screens/home/home_screen.dart';
+import 'package:firebase_core/firebase_core.dart'; // Import Firebase Core
 import 'package:flutter/material.dart';
-
-import 'UI/splash_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
+  await Firebase.initializeApp(); // Initialize Firebase
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartModel()), // Provide CartModel
+        // Other providers if any
+      ],
+      child: MaterialApp(
+        title: 'Your App Title',
+        home: HomeScreen(),
       ),
-      home: SplashScreen(),
     );
   }
 }

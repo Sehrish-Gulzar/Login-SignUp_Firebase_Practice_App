@@ -1,9 +1,10 @@
-import 'package:fire_base_demo/UI/Auth/login_screen.dart';
 import 'package:fire_base_demo/Utils/Utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'login_screen.dart';
 
 void main() {
   runApp(MaterialApp(home: SignUpScreen()));
@@ -78,71 +79,65 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      Card(
-                          margin: EdgeInsets.all(10),
-                          elevation: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: TextFormField(
-                              controller: emailController,
-                              decoration: InputDecoration(
-                                alignLabelWithHint: true,
-                                prefixIcon: Icon(Icons.email),
-                                prefixIconColor: Color(0xff03064f),
-                                floatingLabelStyle:
-                                    TextStyle(color: Colors.black87),
-                                label: Text("Email"),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xff03064f), width: 3.0),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      width: 5, color: Colors.black87),
-                                ),
-                              ),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Email Required";
-                                } else {
-                                  return null;
-                                }
-                              },
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: TextFormField(
+                          controller: emailController,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.email),
+                            prefixIconColor: Color(0xff03064f),
+                            floatingLabelStyle:
+                                TextStyle(color: Colors.black87),
+                            label: Text("Email"),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff03064f), width: 3.0),
                             ),
-                          )),
-                      Card(
-                          margin: EdgeInsets.all(10),
-                          elevation: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: TextFormField(
-                              obscureText: true,
-                              controller: passController,
-                              decoration: InputDecoration(
-                                alignLabelWithHint: true,
-                                prefixIcon: Icon(Icons.key),
-                                prefixIconColor: Color(0xff03064f),
-                                floatingLabelStyle:
-                                    TextStyle(color: Colors.black87),
-                                label: Text("Password"),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xff03064f), width: 3.0),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      width: 5, color: Colors.black87),
-                                ),
-                              ),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Password Required";
-                                } else {
-                                  return null;
-                                }
-                              },
+                            border: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 5, color: Colors.black87),
                             ),
-                          )),
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Email Required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: TextFormField(
+                          obscureText: true,
+                          controller: passController,
+                          decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            prefixIcon: Icon(Icons.key),
+                            prefixIconColor: Color(0xff03064f),
+                            floatingLabelStyle:
+                                TextStyle(color: Colors.black87),
+                            label: Text("Password"),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff03064f), width: 3.0),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 5, color: Colors.black87),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Password Required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),
